@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KeepItFresh</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .card.opinion {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .card.opinion img {
-      border-radius: 50%;
-      height: 50px;
-      width: 50px;
-      object-fit: cover;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 <header>
-  <img src="assets/img/logo.png" alt="KeepItFresh logo" height="40">
+  <img src="assets/img/logo.png" alt="KeepItFresh logo" height="40" />
   <nav>
     <a href="#ofrecemos">¿Qué ofrecemos?</a>
     <a href="#nosotros">Sobre nosotros</a>
     <a href="#beneficios">Beneficios</a>
     <a href="#contacto">Contacto</a>
   </nav>
+  <button id="language-toggle" class="lang-btn">ES</button>
 </header>
 
 <section class="hero" id="ofrecemos">
   <h1>Optimiza la distribución y conservación de alimentos</h1>
-  <p>Con nuestra solución IoT, controla tu inventario en tiempo real y mejora tu servicio.<br>A partir de 50 USD/mes. Cancela cuando quieras.</p>
+  <p>
+    Con nuestra solución IoT, controla tu inventario en tiempo real y mejora tu servicio.<br />
+    A partir de 50 USD/mes. Cancela cuando quieras.
+  </p>
   <button class="button">Comienza tu periodo de prueba gratis</button>
 </section>
 
 <section class="ofrecimiento">
   <h2>¿Qué es KeepItFresh?</h2>
-  <img src="assets/img/logo.png" alt="logo vertical" style="float:right" height="300" width="200">
-  <p>“KeepItFresh” es un servicio el cual permite el monitoreo de puntos críticos del inventario de un restaurante, monitoreando fechas de caducidad, temperaturas y gases (tales como etileno y calidad de aire) para confirmar los niveles de descomposición de los productos en el inventario del restaurante. Así mismo este servicio también ofrece un botón para llamar a los trabajadores del restaurante desde la mesa, con el fin de optimizar la atención dirigida al consumido</p>
+  <img src="assets/img/logo.png" alt="logo vertical" class="float-right" height="300" width="200"/>
+  <p>
+    “KeepItFresh” es un servicio el cual permite el monitoreo de puntos críticos del inventario de un restaurante, monitoreando fechas de caducidad, temperaturas y gases (tales como etileno y calidad de aire) para confirmar los niveles de descomposición de los productos en el inventario del restaurante. Así mismo este servicio también ofrece un botón para llamar a los trabajadores del restaurante desde la mesa, con el fin de optimizar la atención dirigida al consumidor.
+  </p>
   <div class="cards">
     <div class="card">
       <h3>🔒 Tu negocio seguro</h3>
@@ -59,8 +51,10 @@
 
 <section id="nosotros">
   <h2>¿Quiénes somos?</h2>
-  <img src="assets/img/go4u.png" alt="logo-go4u" style="float:right" height="300" width="200">
-  <p>Somos una startup dedicada a soluciones digitales enfocadas en restaurantes. Utilizamos tecnologías IoT para agilizar la gestión de restaurantes. Nuestro enfoque es preventivo, proporcionando sensores y herramientas para evitar problemas como la descomposición de alimentos.</p>
+  <img src="assets/img/go4u.png" alt="logo-go4u" class="float-right" height="300" width="200"/>
+  <p>
+    Somos una startup dedicada a soluciones digitales enfocadas en restaurantes. Utilizamos tecnologías IoT para agilizar la gestión de restaurantes. Nuestro enfoque es preventivo, proporcionando sensores y herramientas para evitar problemas como la descomposición de alimentos.
+  </p>
   <div class="cards">
     <div class="card">
       <h3>📌 Misión</h3>
@@ -78,26 +72,24 @@
 </section>
 
 <section class="pricing-plans">
-  <h2>Pricing & Plans </h2>
-  <p> Plans are based on the quantity of patients </p>
+  <h2>Pricing & Plans</h2>
+  <p>Plans are based on the quantity of patients</p>
   <div class="plans-container">
-    <!--first plan-->
     <div class="plan">
       <h3>First Plan</h3>
       <h4>Ideal para pequeñas empresas que deseen mejorar su inventario y ahorrar.</h4>
       <h5>$10 per month</h5>
       <ul>
-        <li>Control de invertario</li>
+        <li>Control de inventario</li>
         <li>Monitoreo del inventario</li>
         <li>Registro de productos</li>
       </ul>
       <a href="#" class="btn">Go for it</a>
     </div>
-
     <div class="plan">
       <h3>Plan Premium</h3>
       <h4>Enfocado a restaurantes ya consolidados y que deseen implementar una plataforma para optimizar procesos de inventario.</h4>
-      <h5>$100 per Month</h5>
+      <h5>$100 per month</h5>
       <ul>
         <li>Análisis de presupuestos e ingresos</li>
         <li>Reportes diarios sobre el restaurante</li>
@@ -128,16 +120,16 @@
   <h2 class="h2">Opiniones de usuarios</h2>
   <div class="cards">
     <div class="card opinion">
-      <img src="assets/img/p1.jpg">
+      <img src="assets/img/p1.jpg" alt="Usuario 1" />
       <p>Este sistema ha reducido significativamente el desperdicio de alimentos.</p>
     </div>
     <div class="card opinion">
-      <img src="assets/img/p2.jpg">
-      >        <p>Nuestros clientes ahora aprecian el servicio rápido.</p>
+      <img src="assets/img/p2.jpg" alt="Usuario 2" />
+      <p>Nuestros clientes ahora aprecian el servicio rápido.</p>
     </div>
     <div class="card opinion">
-      <img src="assets/img/p3.jpg">
-      <p> Me encanta lo fácil que es monitorear la frescura de los productos.</p>
+      <img src="assets/img/p3.jpg" alt="Usuario 3" />
+      <p>Me encanta lo fácil que es monitorear la frescura de los productos.</p>
     </div>
   </div>
 </section>
@@ -146,13 +138,13 @@
   <h2 class="h2">Contacto</h2>
   <form>
     <label>Your email address</label>
-    <input type="email" required>
+    <input type="email" required />
 
     <label>Country/Region</label>
     <select><option>Seleccionar...</option><option>Perú</option></select>
 
     <label>Subject</label>
-    <input type="text" required>
+    <input type="text" required />
 
     <label>Description</label>
     <textarea rows="5"></textarea>
@@ -164,5 +156,6 @@
 <footer>
   <p>© 2025 KeepItFresh - Todos los derechos reservados.</p>
 </footer>
+<script src="lang-toggle.js"></script>
 </body>
 </html>
