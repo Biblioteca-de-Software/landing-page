@@ -5,36 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KeepItFresh</title>
   <link rel="stylesheet" href="styles.css"/>
+
 </head>
 <body>
 <header>
   <img src="assets/img/logo.png" alt="KeepItFresh logo" height="40" />
-  <nav>
-    <a href="#ofrecemos">¿Qué ofrecemos?</a>
-    <a href="#nosotros">Sobre nosotros</a>
-    <a href="#beneficios">Beneficios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-  <button id="language-toggle" class="lang-btn">ES</button>
+  <nav id="main-nav"></nav>
+  <div class="language-selector">
+    <button onclick="toggleDropdown()" id="selected-lang">🌐 Español ▾</button>
+    <ul id="lang-dropdown" class="hidden">
+      <li onclick="setLanguage('es')">Español</li>
+      <li onclick="setLanguage('en')">English</li>
+    </ul>
+  </div>
 </header>
 
-<section class="hero" id="ofrecemos">
-  <h1>Optimiza la distribución y conservación de alimentos</h1>
-  <p>
-    Con nuestra solución IoT, controla tu inventario en tiempo real y mejora tu servicio.<br />
-    A partir de 50 USD/mes. Cancela cuando quieras.
-  </p>
-  <a href="https://deplokeep.netlify.app" target="_blank">
-  <button class="button">Comienza tu periodo de prueba gratis</button>
-  </a>
+<section class="hero" id="hero">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1>Optimiza la distribución y conservación de alimentos</h1>
+      <p>
+        Con nuestra solución IoT, controla tu inventario en tiempo real y mejora tu servicio.<br />
+        A partir de 50 USD/mes. Cancela cuando quieras.
+      </p>
+      <a href="https://deplokeep.netlify.app" target="_blank" class="button">Comienza tu periodo de prueba gratis</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://i.postimg.cc/Z0kZWr2h/fondo-Keep.jpg" alt="Fondo KeepItFresh" />
+    </div>
+  </div>
 </section>
 
 <section class="ofrecimiento">
-  <h2>¿Qué es KeepItFresh?</h2>
-  <img src="assets/img/logo.png" alt="logo vertical" class="float-right" height="300" width="200"/>
-  <p>
-    “KeepItFresh” es un servicio el cual permite el monitoreo de puntos críticos del inventario de un restaurante, monitoreando fechas de caducidad, temperaturas y gases (tales como etileno y calidad de aire) para confirmar los niveles de descomposición de los productos en el inventario del restaurante. Así mismo este servicio también ofrece un botón para llamar a los trabajadores del restaurante desde la mesa, con el fin de optimizar la atención dirigida al consumidor.
-  </p>
   <div class="cards">
     <div class="card">
       <h3>🔒 Tu negocio seguro</h3>
@@ -47,57 +49,6 @@
     <div class="card">
       <h3>📊 Datos en tiempo real</h3>
       <p>Accede a reportes y métricas desde cualquier dispositivo. Toma decisiones basadas en información actualizada y confiable.</p>
-    </div>
-  </div>
-</section>
-
-<section id="nosotros">
-  <h2>¿Quiénes somos?</h2>
-  <img src="assets/img/go4u.png" alt="logo-go4u" class="float-right" height="300" width="200"/>
-  <p>
-    Somos una startup dedicada a soluciones digitales enfocadas en restaurantes. Utilizamos tecnologías IoT para agilizar la gestión de restaurantes. Nuestro enfoque es preventivo, proporcionando sensores y herramientas para evitar problemas como la descomposición de alimentos.
-  </p>
-  <div class="cards">
-    <div class="card">
-      <h3>📌 Misión</h3>
-      <p>Facilitar la gestión de los restaurantes a través del monitoreo continuo y el uso de tecnologías digitales.</p>
-    </div>
-    <div class="card">
-      <h3>🚀 Visión</h3>
-      <p>Ser la empresa más importante del Perú en gestión y optimización de restaurantes.</p>
-    </div>
-    <div class="card">
-      <h3>📦 Producto: KeepItFresh</h3>
-      <p>Monitoreo de puntos críticos del inventario de restaurantes.</p>
-    </div>
-  </div>
-</section>
-
-<section class="pricing-plans">
-  <h2>Pricing & Plans</h2>
-  <p>Plans are based on the quantity of patients</p>
-  <div class="plans-container">
-    <div class="plan">
-      <h3>First Plan</h3>
-      <h4>Ideal para pequeñas empresas que deseen mejorar su inventario y ahorrar.</h4>
-      <h5>$10 per month</h5>
-      <ul>
-        <li>Control de inventario</li>
-        <li>Monitoreo del inventario</li>
-        <li>Registro de productos</li>
-      </ul>
-      <a href="#" class="btn">Go for it</a>
-    </div>
-    <div class="plan">
-      <h3>Plan Premium</h3>
-      <h4>Enfocado a restaurantes ya consolidados y que deseen implementar una plataforma para optimizar procesos de inventario.</h4>
-      <h5>$100 per month</h5>
-      <ul>
-        <li>Análisis de presupuestos e ingresos</li>
-        <li>Reportes diarios sobre el restaurante</li>
-        <li>Registro de varios inventarios</li>
-      </ul>
-      <a href="#" class="btn">Go for it</a>
     </div>
   </div>
 </section>
@@ -118,39 +69,104 @@
       <p>Optimiza la atención al cliente con un botón de llamado para empleados.</p>
     </div>
   </div>
+</section>
 
+<section id="planes" class="pricing-plans">
+  <h2>Planes disponibles</h2>
+  <p>Elige el plan que mejor se adapte a tu restaurante</p>
+  <div class="plans-container">
+    <div class="plan">
+      <h3>Plan Básico</h3>
+      <p>Ideal para pequeños restaurantes</p>
+      <div class="price">$10<span>/mes</span></div>
+      <ul>
+        <li>Control de inventario</li>
+        <li>Monitoreo del inventario</li>
+        <li>Registro de productos</li>
+      </ul>
+      <a href="#" class="btn">Elegir Plan</a>
+    </div>
+    <div class="plan">
+      <h3>Plan Premium</h3>
+      <p>Para negocios que buscan lo mejor</p>
+      <div class="price">$100<span>/mes</span></div>
+      <ul>
+        <li>Análisis de ingresos y presupuestos</li>
+        <li>Reportes diarios del restaurante</li>
+        <li>Registro de varios inventarios</li>
+      </ul>
+      <a href="#" class="btn">Elegir Plan</a>
+    </div>
+  </div>
+</section>
+<!-- Nosotros================================================== -->
+<section id="nosotros" style="background-color: #fef6e3; padding: 4rem 2rem;">
+  <div class="row about-how">
+
+    <h1 class="intro-header" style="color: #4B3B2A; text-align: center;" data-aos="fade-up">
+      Nosotros
+    </h1>
+
+    <div class="about-how-content" data-aos="fade-up" style="text-align: center;">
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/gj1rPo6-jh8"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+      </iframe>
+
+      <h2 style="margin-top: 3rem; color: #4B3B2A;">
+        Sobre el producto
+      </h2>
+
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/UA0Mvyjgsr4"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<section id="opiniones" class="opiniones">
   <h2 class="h2">Opiniones de usuarios</h2>
-  <div class="cards">
-    <div class="card opinion">
-      <img src="assets/img/p1.jpg" alt="Usuario 1" />
+  <div class="opinion-slider">
+    <div class="opinion-slide active">
       <p>Este sistema ha reducido significativamente el desperdicio de alimentos.</p>
+      <img src="assets/img/p1.jpg" alt="Usuario 1" />
+      <h4>María M.</h4>
     </div>
-    <div class="card opinion">
-      <img src="assets/img/p2.jpg" alt="Usuario 2" />
+    <div class="opinion-slide">
       <p>Nuestros clientes ahora aprecian el servicio rápido.</p>
+      <img src="assets/img/p2.jpg" alt="Usuario 2" />
+      <h4>Carlos C.</h4>
     </div>
-    <div class="card opinion">
-      <img src="assets/img/p3.jpg" alt="Usuario 3" />
+    <div class="opinion-slide">
       <p>Me encanta lo fácil que es monitorear la frescura de los productos.</p>
+      <img src="assets/img/p3.jpg" alt="Usuario 3" />
+      <h4>Claudia K.</h4>
     </div>
+  </div>
+  <div class="opinion-dots">
+    <span class="dot active" onclick="showSlide(0)"></span>
+    <span class="dot" onclick="showSlide(1)"></span>
+    <span class="dot" onclick="showSlide(2)"></span>
   </div>
 </section>
 
 <section id="contacto" class="contacto">
   <h2 class="h2">Contacto</h2>
   <form>
-    <label>Your email address</label>
+    <label>Tu correo electrónico</label>
     <input type="email" required />
-
-    <label>Country/Region</label>
+    <label>País / Región</label>
     <select><option>Seleccionar...</option><option>Perú</option></select>
-
-    <label>Subject</label>
+    <label>Asunto</label>
     <input type="text" required />
-
-    <label>Description</label>
+    <label>Descripción</label>
     <textarea rows="5"></textarea>
-
     <button class="button" type="submit">Enviar</button>
   </form>
 </section>
@@ -158,6 +174,11 @@
 <footer>
   <p>© 2025 KeepItFresh - Todos los derechos reservados.</p>
 </footer>
+
 <script src="lang-toggle.js"></script>
+
+
 </body>
+
+
 </html>
