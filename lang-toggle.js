@@ -21,11 +21,7 @@ const translations = {
         ],
         nosotrosTitle: "¿Quiénes somos?",
         nosotrosText: "Somos una startup dedicada a soluciones digitales...",
-        nosotrosCards: [
-            "📌 Misión",
-            "🚀 Visión",
-            "📦 Producto: KeepItFresh"
-        ],
+        nosotrosCards: ["📌 Misión", "🚀 Visión", "📦 Producto: KeepItFresh"],
         nosotrosP: [
             "Facilitar la gestión de los restaurantes...",
             "Ser la empresa más importante del Perú...",
@@ -57,6 +53,7 @@ const translations = {
         contacto: "Contacto",
         labels: ["Correo electrónico", "País/Región", "Asunto", "Descripción"],
         enviar: "Enviar"
+
     },
     en: {
         nav: ["Home", "What do we offer?", "Plans", "About us", "Benefits", "Contact"],
@@ -112,12 +109,12 @@ const translations = {
     }
 };
 
-// Traducciones dinámicas
+// Aplicar traducciones dinámicamente
 function applyTranslations(lang) {
     const t = translations[lang];
+    const hrefs = ["hero", "ofrecemos", "planes", "nosotros", "beneficios", "contacto"];
 
     // Menú de navegación
-    const hrefs = ["hero", "ofrecemos", "planes", "nosotros", "beneficios", "contacto"];
     document.querySelector("#main-nav").innerHTML = t.nav
         .map((text, i) => `<a href="#${hrefs[i]}">${text}</a>`)
         .join("");
@@ -193,7 +190,7 @@ function setLanguage(lang) {
     document.getElementById("lang-dropdown").classList.add("hidden");
 }
 
-// Toggle del menú de idioma
+// Mostrar/ocultar menú de idioma
 function toggleDropdown() {
     document.getElementById("lang-dropdown").classList.toggle("hidden");
 }
@@ -214,23 +211,27 @@ function showSlide(index) {
     currentSlide = index;
 }
 
-// Inicializar al cargar
+// Iniciar al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
+    // Aplicar traducción inicial
     applyTranslations(currentLang);
     document.getElementById("selected-lang").innerText =
         currentLang === "es" ? "🌐 Español ▾" : "🌐 English ▾";
-});
-document.addEventListener("DOMContentLoaded", () => {
+
+    // Resaltar sección activa en el menú al hacer scroll
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("#main-nav a");
 
+    const getOffset = el => el.getBoundingClientRect().top + window.scrollY;
+
     window.addEventListener("scroll", () => {
         let current = "";
+        const scrollPosition = window.scrollY + 100; // margen para activar antes
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (scrollY >= sectionTop - 80) {
+            const top = getOffset(section);
+            const height = section.offsetHeight;
+            if (scrollPosition >= top && scrollPosition < top + height) {
                 current = section.getAttribute("id");
             }
         });
